@@ -94,3 +94,8 @@
     color: #555; /* Slightly muted color for details */
     font-weight: normal; /* Less bold for details */
 }
+
+.filter-btn {
+    margin: 10px;
+    cursor: pointer;
+}

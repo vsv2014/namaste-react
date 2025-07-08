@@ -1,51 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSssd5KBDZFyi75aYnCavYeVyGC1DwDWTVGjmFYBtZ6nh0tEoZZ7-ILKpSUaa7AbmzHYIU&usqp=CAU"
-        />
-      </div>
-
-      <div className="nav-items">
-        <ul>
-          <li> Home</li>
-          <li> About Us</li>
-          <li> Contact us</li>
-          <li> Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestoCard = (props) => {
-  const { resData } = props;
-  const { cloudinaryImageId, name, cuisines, avgRating, sla } = resData?.info;
-
-  return (
-    <div className="res-card">
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={IMG_CDN_URL + cloudinaryImageId}
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{sla?.slaString}</h3>
-      <h3>{avgRating} stars</h3>
-    </div>
-  );
-};
-
-const Body = () => {
-  // CORRECTED: Removed the extra curly brace at the beginning
   const resList = [{
     "info": {
       "id": "344287",
@@ -1587,28 +1539,4 @@ const Body = () => {
     }
   ]
 
-
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="rest-container">
-        {resList.map((restaurant) => (
-          <RestoCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+  export default resList;
