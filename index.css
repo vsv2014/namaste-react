@@ -1,3 +1,96 @@
-#heading {
-    color : green;
+.header {
+    display: flex;
+    border: 2px solid black;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+}
+
+.nav-items {
+    padding: 0px 20px;
+}
+
+.nav-items > ul {
+    font-size: 24px;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.nav-items > ul > li:hover {
+    color: #007bff;
+}
+
+.body {
+    padding: 20px;
+}
+
+.search {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.rest-container {
+    /* Removed individual margin/padding to use gap */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* This creates consistent spacing between cards */
+    justify-content: center; /* Centers the cards horizontally */
+    margin: 20px 0; /* Add some margin around the entire container if needed */
+}
+
+.res-card {
+    width: 200px;
+    /* REMOVED FIXED HEIGHT: Allow content to dictate height for flexibility */
+    /* If you MUST have a fixed height, ensure content (especially image) fits */
+    /* height: 450px; */
+    border: 1px solid black;
+    border-radius: 8px; /* Consistent with previous suggestions */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures content doesn't spill out, especially if image has border-radius */
+    display: flex; /* Use flexbox for internal content organization */
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px; /* Increased internal padding for better breathing room */
+    background-color: #f0f0f0; /* Applying the background color from styleCard */
+    transition: border 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.res-card:hover {
+    cursor: pointer;
+    border: 1px solid orange;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+.res-logo {
+    width: 100%;
+    height: 160px; /* Set a consistent height for the image */
+    object-fit: cover; /* Ensures image covers the space without distortion */
+    border-radius: 5px; /* Slight roundness for image corners */
+    margin-bottom: 10px; /* Space between image and text below */
+}
+
+/* Specific styles for headings within the card for better layout */
+.res-card h2 {
+    font-size: 1.2em;
+    margin: 0 0 5px 0; /* Reduce default margins */
+}
+
+.res-card h3 {
+    font-size: 0.9em;
+    margin: 2px 0; /* Reduce default margins */
+    color: #555; /* Slightly muted color for details */
+    font-weight: normal; /* Less bold for details */
 }
